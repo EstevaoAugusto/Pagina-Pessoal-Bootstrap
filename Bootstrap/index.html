@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio — Dev</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Cores customizadas para manter a identidade do projeto original */
+    :root {
+      --accent: #00d4ff; /* Substitua pela cor exata do seu projeto original */
+      --ink: #121212;
+      --paper: #f8f9fa;
+    }
+
+    [data-bs-theme="dark"] {
+      --bs-body-bg: var(--ink);
+      --bs-body-color: var(--paper);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .font-display { font-family: 'Playfair+Display', serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .text-accent { color: var(--accent) !important; }
+    .bg-accent { background-color: var(--accent) !important; }
+    
+    /* Navbar glassmorphism */
+    .navbar-custom {
+      backdrop-filter: blur(10px);
+      background-color: rgba(18, 18, 18, 0.8);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-link-custom {
+      color: inherit;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    .nav-link-custom:hover { color: var(--accent); }
+
+    /* Hero & Decor */
+    .hero-section { min-h-screen; padding-top: 120px; position: relative; overflow: hidden; }
+    .circle-decor {
+      position: absolute;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s ease;
+      border-radius: 1rem;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+    }
+
+    .skill-bar-container {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      width: 100%;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: var(--ink);
+      border-radius: 50px;
+      padding: 10px 30px;
+      font-weight: 600;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md fixed-top navbar-custom px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand font-display fw-bold" href="#hero">
+        <span class="text-accent">&lt;</span>Dev<span class="text-accent">/&gt;</span>
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navContent">
+        <div class="navbar-nav mx-auto gap-4">
+          <a class="nav-link-custom text-uppercase" href="#sobre">Sobre</a>
+          <a class="nav-link-custom text-uppercase" href="#projetos">Projetos</a>
+          <a class="nav-link-custom text-uppercase" href="#formacao">Formação</a>
+          <a class="nav-link-custom text-uppercase" href="#skills">Skills</a>
+          <a class="nav-link-custom text-uppercase" href="#contato">Contato</a>
+        </div>
+        
+        <button id="themeToggle" class="btn btn-outline-secondary rounded-circle" style="width: 40px; height: 40px; padding: 0;">
+          ☀️
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero-section container-fluid d-flex align-items-center min-vh-100 px-lg-5">
+    <div class="circle-decor" style="width: 520px; height: 520px; right: -130px; top: 20%;"></div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="font-mono text-accent text-uppercase ls-widest mb-3">Olá, mundo! 👋</p>
+          <h1 class="font-display display-1 fw-bold mb-4">
+            Eu sou<br/>
+            <span class="fst-italic fw-normal text-accent">Estevão Augusto</span>
+          </h1>
+          <p class="lead opacity-75 mb-5 mw-md-75">
+            Cientista da Computação apaixonado pela área de dados e inteligência artificial, 
+            buscando sempre aprender e aplicar novas tecnologias para resolver problemas complexos.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#projetos" class="btn btn-accent font-mono shadow">Ver Projetos →</a>
+            <a href="#contato" class="btn btn-outline-light rounded-pill px-4 font-mono">Falar comigo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="py-5 border-top border-secondary border-opacity-10">
+    <div class="container py-5">
+      <div class="row align-items-center g-5">
+        <div class="col-md-5">
+          <div class="position-relative text-center">
+            <div class="rounded-5 d-flex align-items-center justify-content-center mx-auto" 
+                 style="width: 300px; height: 300px; background: linear-gradient(135deg, rgba(0,212,255,0.2), rgba(0,212,255,0.05)); border: 1px solid rgba(0,212,255,0.2); font-size: 5rem;">
+              🧑‍💻
+            </div>
+            <div class="position-absolute bottom-0 end-0 bg-light text-dark font-mono small px-3 py-1 rounded-pill shadow">
+              Available for hire ✓
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <span class="font-mono text-accent text-uppercase small">// sobre mim</span>
+          <h2 class="font-display display-5 fw-bold my-3">Código com<br/><em class="fst-italic fw-normal text-accent">propósito</em></h2>
+          <p class="opacity-75">Tenho 5 anos de experiência construindo produtos digitais que realmente importam. Especializado em React, Node.js e arquiteturas cloud-native.</p>
+          <p class="opacity-75 mb-4">Acredito que bom código é aquele que humanos conseguem ler tão bem quanto máquinas.</p>
+          
+          <div class="row pt-4 border-top border-secondary border-opacity-10">
+            <div class="col-4">
+              <h3 class="font-display fw-bold text-accent mb-0">5+</h3>
+              <p class="small text-uppercase opacity-50">Anos exp.</p>
+            </div>
+            <div class="col-4">
+              <h3 class="font-display fw-bold text-accent mb-0">40+</h3>
+              <p class="small text-uppercase opacity-50">Projetos</p>
+            </div>
+            <div class="col-4">
+              <h3 class="font-display fw-bold text-accent mb-0">12+</h3>
+              <p class="small text-uppercase opacity-50">Clientes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="py-5 bg-light bg-opacity-10 border-top border-secondary border-opacity-10">
+    <div class="container py-5">
+      <div class="mb-5">
+        <span class="font-mono text-accent text-uppercase small">// projetos</span>
+        <h2 class="font-display display-5 fw-bold mt-2">Trabalhos em Destaque</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="project-card p-4 h-100">
+            <div class="fs-1 mb-3">💥</div>
+            <span class="font-mono text-accent x-small">Javascript · CSS · HTML</span>
+            <h3 class="font-display h4 fw-bold mt-2">Breakout</h3>
+            <p class="opacity-75 small">Jogo inspirado no clássico Arkanoid. O jogador controla uma barra para rebater uma bola.</p>
+            <div class="d-flex gap-2 mt-4">
+              <a href="#" class="btn btn-outline-info btn-sm rounded-pill font-mono">Demo →</a>
+              <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill font-mono">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="project-card p-4 h-100">
+            <div class="fs-1 mb-3">📈</div>
+            <span class="font-mono text-accent x-small">Python · Data · ML</span>
+            <h3 class="font-display h4 fw-bold mt-2">Desafio ZettaLab</h3>
+            <p class="opacity-75 small">Análise de dados governamentais sobre questões econômicas e sociais durante o desafio UFLA.</p>
+            <div class="d-flex gap-2 mt-4">
+              <a href="#" class="btn btn-outline-info btn-sm rounded-pill font-mono">Dashboard →</a>
+              <a href="#" class="btn btn-outline-secondary btn-sm rounded-pill font-mono">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-5 border-top border-secondary border-opacity-10">
+    <div class="container py-5">
+      <div class="mb-5">
+        <span class="font-mono text-accent text-uppercase small">// skills</span>
+        <h2 class="font-display display-5 fw-bold mt-2">Stack & Ferramentas</h2>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-6">
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-2">
+              <span>React / Next.js</span><span class="text-accent">95%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-2">
+              <span>Python / FastAPI</span><span class="text-accent">80%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-2">
+              <span>PostgreSQL</span><span class="text-accent">85%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-2">
+              <span>UI/UX (Figma)</span><span class="text-accent">70%</span>
+            </div>
+            <div class="skill-bar-container"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-5 border-top border-secondary border-opacity-10">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <span class="font-display h5 fw-bold">
+        <span class="text-accent">&lt;</span>Dev<span class="text-accent">/&gt;</span>
+      </span>
+      <p class="font-mono x-small opacity-50 mb-0">
+        © 2026 Estevão Augusto · Feito com ❤️ &amp; Bootstrap 5
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
