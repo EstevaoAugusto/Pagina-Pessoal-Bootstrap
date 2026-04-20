@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio — Dev</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CDN with dark mode config -->
+  <script src="./tailwind-config.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
+
+  <!-- ── NAV ── -->
+  <nav class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5
+              bg-paper/80 dark:bg-ink/80 backdrop-blur-md border-b border-ink/10 dark:border-paper/10">
+
+    <a href="#hero" class="font-display text-xl font-bold tracking-tight">
+      <span class="text-accent">&lt;</span>Dev<span class="text-accent">/&gt;</span>
+    </a>
+
+    <div class="hidden md:flex gap-8 font-body text-sm font-medium tracking-wide uppercase">
+      <a href="#sobre"    class="nav-link hover:text-accent transition-colors duration-200">Sobre</a>
+      <a href="#projetos" class="nav-link hover:text-accent transition-colors duration-200">Projetos</a>
+      <a href="#formacao" class="nav-link hover:text-accent transition-colors duration-200">Formação</a>
+      <a href="#skills"   class="nav-link hover:text-accent transition-colors duration-200">Skills</a>
+      <a href="#contato"  class="nav-link hover:text-accent transition-colors duration-200">Contato</a>
+    </div>
+
+    <!-- Theme toggle -->
+    <button id="themeToggle" aria-label="Alternar tema"
+      class="w-10 h-10 rounded-full border border-ink/20 dark:border-paper/20
+             flex items-center justify-center hover:border-accent hover:text-accent
+             transition-all duration-300 text-lg">
+      <span id="themeIcon">☀️</span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero" class="min-h-screen flex items-center px-8 md:px-20 pt-24 pb-16 relative overflow-hidden">
+
+    <!-- Decorative circle -->
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full
+                border border-accent/20 opacity-40 pointer-events-none translate-x-1/4"></div>
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full
+                border border-accent/30 opacity-30 pointer-events-none translate-x-1/4"></div>
+    <div class="absolute right-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full
+                bg-accent/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-3xl">
+      <p class="animate-fadein-1 font-mono text-sm text-accent tracking-widest uppercase mb-4">
+        Olá, mundo! 👋
+      </p>
+
+      <h1 class="animate-fadein-2 font-display text-6xl md:text-8xl font-bold leading-[1.05] mb-6">
+        Eu sou<br/>
+        <span class="italic font-normal text-accent">Estevão Augusto</span>
+      </h1>
+
+      <p class="animate-fadein-3 font-body text-lg md:text-xl text-ink/60 dark:text-paper/60 max-w-xl leading-relaxed mb-10">
+        Ciêntista da Computação apaixonado pela área de dados e inteligência artificial, 
+        buscando sempre aprender e aplicar novas tecnologias para resolver problemas complexos.
+      </p>
+
+      <div class="animate-fadein-4 flex flex-wrap gap-4">
+        <a href="#projetos"
+           class="px-7 py-3.5 bg-accent text-ink font-mono font-semibold text-sm rounded-full
+                  hover:scale-105 active:scale-95 transition-transform duration-200 shadow-lg shadow-accent/20">
+          Ver Projetos →
+        </a>
+        <a href="#contato"
+           class="px-7 py-3.5 border border-ink/30 dark:border-paper/30 font-mono text-sm rounded-full
+                  hover:border-accent hover:text-accent transition-colors duration-200">
+          Falar comigo
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating badge -->
+    <div class="hidden lg:flex absolute right-20 bottom-20 flex-col items-center gap-1 opacity-40">
+      <div class="w-px h-16 bg-current"></div>
+      <span class="font-mono text-xs tracking-widest rotate-90 origin-center translate-y-8">scroll</span>
+    </div>
+  </section>
+
+  <!-- ── SOBRE ── -->
+  <section id="sobre" class="py-28 px-8 md:px-20 border-t border-ink/10 dark:border-paper/10">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+
+      <!-- Photo placeholder -->
+      <div class="reveal relative">
+        <div class="w-full aspect-square max-w-xs mx-auto rounded-3xl overflow-hidden
+                    bg-gradient-to-br from-accent/30 to-accent/5
+                    border border-accent/20 flex items-center justify-center
+                    text-8xl shadow-2xl shadow-accent/10">
+          🧑‍💻
+        </div>
+        <!-- Decorative tag -->
+        <div class="absolute -bottom-5 -right-5 bg-ink dark:bg-paper text-paper dark:text-ink
+                    font-mono text-xs px-4 py-2 rounded-full shadow-xl">
+          Available for hire ✓
+        </div>
+      </div>
+
+      <div class="reveal">
+        <span class="font-mono text-xs text-accent tracking-widest uppercase">// sobre mim</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
+          Código com<br/><em class="italic font-normal text-accent">propósito</em>
+        </h2>
+        <p class="text-ink/70 dark:text-paper/70 leading-relaxed mb-4">
+          Tenho 5 anos de experiência construindo produtos digitais que realmente importam.
+          Especializado em React, Node.js e arquiteturas cloud-native.
+        </p>
+        <p class="text-ink/70 dark:text-paper/70 leading-relaxed mb-8">
+          Acredito que bom código é aquele que humanos conseguem ler tão bem quanto máquinas.
+          Fora do terminal, você me encontra lendo sobre design de sistemas ou explorando trilhas.
+        </p>
+        <div class="grid grid-cols-3 gap-6 border-t border-ink/10 dark:border-paper/10 pt-8">
+          <div>
+            <p class="font-display text-4xl font-bold text-accent">5+</p>
+            <p class="text-xs text-ink/50 dark:text-paper/50 uppercase tracking-wider mt-1">Anos exp.</p>
+          </div>
+          <div>
+            <p class="font-display text-4xl font-bold text-accent">40+</p>
+            <p class="text-xs text-ink/50 dark:text-paper/50 uppercase tracking-wider mt-1">Projetos</p>
+          </div>
+          <div>
+            <p class="font-display text-4xl font-bold text-accent">12+</p>
+            <p class="text-xs text-ink/50 dark:text-paper/50 uppercase tracking-wider mt-1">Clientes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJETOS ── -->
+  <section id="projetos" class="py-28 px-8 md:px-20 border-t border-ink/10 dark:border-paper/10
+                                bg-ink/[0.03] dark:bg-paper/[0.03]">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-16">
+        <span class="font-mono text-xs text-accent tracking-widest uppercase">// projetos</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">Trabalhos em Destaque</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <!-- Card 1 -->
+        <div class="project-card reveal group relative rounded-2xl overflow-hidden
+                    border border-ink/10 dark:border-paper/10 bg-paper dark:bg-ink/60
+                    shadow-sm hover:shadow-xl hover:shadow-accent/10 p-8">
+          <div class="text-4xl mb-5">💥</div>
+          <span class="font-mono text-xs text-accent tracking-widest">Javascript · CSS · HTML</span>
+          <h3 class="font-display text-2xl font-bold mt-2 mb-3 group-hover:text-accent transition-colors">
+            Breakout
+          </h3>
+          <p class="text-ink/60 dark:text-paper/60 text-sm leading-relaxed mb-6">
+            Jogo feito em Javascript puro, inspirado no clássico Arkanoid. 
+            O jogador controla uma barra para rebater uma bola
+          </p>
+          <div class="flex gap-3">
+            <a href="https://estevaoaugusto.github.io/Jogo-Breakout/" class="font-mono text-xs border border-accent/40 text-accent px-4 py-1.5 rounded-full
+                               hover:bg-accent hover:text-ink transition-colors duration-200">Demo →</a>
+            <a href="https://github.com/EstevaoAugusto/Jogo-Breakout" class="font-mono text-xs border border-ink/20 dark:border-paper/20 px-4 py-1.5 rounded-full
+                               hover:border-accent hover:text-accent transition-colors duration-200">GitHub</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card reveal group relative rounded-2xl overflow-hidden
+                    border border-ink/10 dark:border-paper/10 bg-paper dark:bg-ink/60
+                    shadow-sm hover:shadow-xl hover:shadow-accent/10 p-8">
+          <div class="text-4xl mb-5">📈</div>
+          <span class="font-mono text-xs text-accent tracking-widest">Python · Data · ML</span>
+          <h3 class="font-display text-2xl font-bold mt-2 mb-3 group-hover:text-accent transition-colors">
+            Desafio ZettaLab: Ciência e Governança de Dados
+          </h3>
+          <p class="text-ink/60 dark:text-paper/60 text-sm leading-relaxed mb-6">
+            Projeto de Ciência de Dados, a qual analisei dados do governo sobre questões economicas, e sociais,
+            a fim de gerar insights, e criar relatorios para tomada de decisão. O projeto foi feito durante
+            o desafio ZettaLab na UFLA.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://desafio-zettalab-ciencia-e-governanca-de-dados.streamlit.app/" class="font-mono text-xs border border-accent/40 text-accent px-4 py-1.5 rounded-full
+                               hover:bg-accent hover:text-ink transition-colors duration-200">Dashboard →</a>
+            <a href="https://github.com/EstevaoAugusto/ZettaLab-2ed-Desafio-Ciencia-e-Governanca-de-Dados" class="font-mono text-xs border border-ink/20 dark:border-paper/20 px-4 py-1.5 rounded-full
+                               hover:border-accent hover:text-accent transition-colors duration-200">GitHub</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card reveal group relative rounded-2xl overflow-hidden
+                    border border-ink/10 dark:border-paper/10 bg-paper dark:bg-ink/60
+                    shadow-sm hover:shadow-xl hover:shadow-accent/10 p-8">
+          <div class="text-4xl mb-5">📊</div>
+          <span class="font-mono text-xs text-accent tracking-widest">Python · RAG · Javascript</span>
+          <h3 class="font-display text-2xl font-bold mt-2 mb-3 group-hover:text-accent transition-colors">
+            CoffeeNet
+          </h3>
+          <p class="text-ink/60 dark:text-paper/60 text-sm leading-relaxed mb-6">
+            Trabalho em grupo realizado na disciplina 'Sistemas Distribuídos', onde construímos um sistema de RAG (Retrieval-Augmented Generation)
+            para melhorar o atendimento de clientes em Cafeterias.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://github.com/EstevaoAugusto/Trabalho-GCC129" class="font-mono text-xs border border-ink/20 dark:border-paper/20 px-4 py-1.5 rounded-full
+                               hover:border-accent hover:text-accent transition-colors duration-200">GitHub</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="project-card reveal group relative rounded-2xl overflow-hidden
+                    border border-ink/10 dark:border-paper/10 bg-paper dark:bg-ink/60
+                    shadow-sm hover:shadow-xl hover:shadow-accent/10 p-8">
+          <div class="text-4xl mb-5">💬</div>
+          <span class="font-mono text-xs text-accent tracking-widest">Compiladores</span>
+          <h3 class="font-display text-2xl font-bold mt-2 mb-3 group-hover:text-accent transition-colors">
+            Trabalho-Compiladores
+          </h3>
+          <p class="text-ink/60 dark:text-paper/60 text-sm leading-relaxed mb-6">
+            Trabalho da Disciplina Compiladores do curso de Ciência de Computação da Universidade Federal de Lavras (UFLA). 
+            O objetivo desse trabalho é criar um analisador léxico e sintático utilizando Flex e Bison, duas ferramentas amplamente utilizadas para a construção de compiladores e analisadores.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://github.com/EstevaoAugusto/Trabalho-Compiladores" class="font-mono text-xs border border-ink/20 dark:border-paper/20 px-4 py-1.5 rounded-full
+                               hover:border-accent hover:text-accent transition-colors duration-200">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="py-28 px-8 md:px-20 border-t border-ink/10 dark:border-paper/10">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-16">
+        <span class="font-mono text-xs text-accent tracking-widest uppercase">// skills</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mt-3">Stack & Ferramentas</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-20 gap-y-12">
+
+        <!-- Left column -->
+        <div class="reveal space-y-8">
+
+          <div>
+            <div class="flex justify-between font-mono text-sm mb-2">
+              <span>React / Next.js</span><span class="text-accent">95%</span>
+            </div>
+            <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
+              <div class="skill-fill" style="width:95%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-mono text-sm mb-2">
+              <span>TypeScript</span><span class="text-accent">90%</span>
+            </div>
+            <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
+              <div class="skill-fill" style="width:90%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-mono text-sm mb-2">
+              <span>Node.js / Express</span><span class="text-accent">88%</span>
+            </div>
+            <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
+              <div class="skill-fill" style="width:88%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-mono text-sm mb-2">
+              <span>Python / FastAPI</span><span class="text-accent">80%</span>
+            </div>
+            <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
+              <div class="skill-fill" style="width:80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="reveal space-y-8">
+
+          <div>
+            <div class="flex justify-between font-mono text-sm mb-2">
+              <span>PostgreSQL / Supabase</span><span class="text-accent">85%</span>
+            </div>
+            <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
+              <div class="skill-fill" style="width:85%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-mono text-sm mb-2">
+              <span>Docker / CI-CD</span><span class="text-accent">78%</span>
+            </div>
+            <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
+              <div class="skill-fill" style="width:78%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-mono text-sm mb-2">
+              <span>AWS / GCP</span><span class="text-accent">75%</span>
+            </div>
+            <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
+              <div class="skill-fill" style="width:75%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between font-mono text-sm mb-2">
+              <span>UI/UX Design (Figma)</span><span class="text-accent">70%</span>
+            </div>
+            <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
+              <div class="skill-fill" style="width:70%"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech badges -->
+      <div class="reveal mt-16 flex flex-wrap gap-3">
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Git</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Tailwind CSS</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">GraphQL</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Redis</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Prisma</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Vitest</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Storybook</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Vercel</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Linux</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAÇÃO -->
+  <section id="formacao" class="py-28 px-8 md:px-20 border-t border-ink/10 dark:border-paper/10
+                               bg-ink/[0.03] dark:bg-paper/[0.03]">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal mb-12">
+        <span class="font-mono text-xs text-accent tracking-widest uppercase">// formação</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 leading-tight">
+          Educação & Certificações
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-20 gap-y-12">
+
+        <!-- Degree -->
+        <div class="reveal flex items-start gap-4">
+          <div class="text-3xl mt-1">🎓</div>
+          <div>
+            <h3 class="font-display text-xl font-bold">Bacharelado em Ciência da Computação</h3>
+            <p class="text-sm text-ink/60 dark:text-paper/60">Universidade Federal de Lavras (UFLA) · 2023 - Presente</p>
+          </div>
+        </div>
+
+        <div class="reveal flex items-start gap-4">
+          <div class="text-3xl mt-1">🎓</div>
+          <div>
+            <h3 class="font-display text-xl font-bold">Ensino Médio Integrado ao Técnico em Informática</h3>
+            <p class="text-sm text-ink/60 dark:text-paper/60">IFSULDEMINAS, Campus Avançado de Carmo de Minas · 2020 - 2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── CONTATO ── -->
+  <section id="contato" class="py-28 px-8 md:px-20 border-t border-ink/10 dark:border-paper/10
+                               bg-ink/[0.03] dark:bg-paper/[0.03]">
+    <div class="max-w-3xl mx-auto">
+      <div class="reveal mb-12">
+        <span class="font-mono text-xs text-accent tracking-widest uppercase">// contato</span>
+        <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 leading-tight">
+          Vamos construir<br/><em class="italic font-normal text-accent">algo incrível</em>?
+        </h2>
+        <p class="text-ink/60 dark:text-paper/60 mt-4 leading-relaxed">
+          Estou aberto a oportunidades freelance, colaborações e posições full-time.
+          Envie uma mensagem — responderei em até 24h.
+        </p>
+      </div>
+
+      <!-- Social links -->
+      <div class="reveal mt-16 flex gap-6 pt-10 border-t border-ink/10 dark:border-paper/10">
+        <a href="https://github.com/EstevaoAugusto" class="font-mono text-xs hover:text-accent transition-colors duration-200 flex items-center gap-2">
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/estev%C3%A3o-augusto-fonseca-santos-a61792280/" class="font-mono text-xs hover:text-accent transition-colors duration-200 flex items-center gap-2">
+          <span>LinkedIn</span>
+        </a>
+        <a href="mailto:estevaoaugusto2005@gmail.com" class="font-mono text-xs hover:text-accent transition-colors duration-200">
+          estevaoaugusto2005@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="py-8 px-8 md:px-20 border-t border-ink/10 dark:border-paper/10">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <span class="font-display text-lg font-bold">
+        <span class="text-accent">&lt;</span>Dev<span class="text-accent">/&gt;</span>
+      </span>
+      <p class="font-mono text-xs text-ink/40 dark:text-paper/40">
+        © 2026 Estevão Augusto · Feito com ❤️ &amp; Tailwind CSS
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
