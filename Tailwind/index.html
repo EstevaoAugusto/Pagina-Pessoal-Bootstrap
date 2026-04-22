@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfólio — Dev</title>
+  <title>Portfólio — Estevão Augusto</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Tailwind CDN with dark mode config -->
@@ -18,58 +18,72 @@
 
 <body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
 
-  <!-- ── NAV ── -->
+  <-- ── NAVBAR ── -->
   <nav class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5
               bg-paper/80 dark:bg-ink/80 backdrop-blur-md border-b border-ink/10 dark:border-paper/10">
 
-    <a href="#hero" class="font-display text-xl font-bold tracking-tight">
-      <span class="text-accent">&lt;</span>Dev<span class="text-accent">/&gt;</span>
+    <a href="#hero" class="font-display text-xl font-bold tracking-tight z-50" id="logoHero">
+      <span class="text-accent">&lt;</span>Estevão Augusto<span class="text-accent">/&gt;</span>
     </a>
 
     <div class="hidden md:flex gap-8 font-body text-sm font-medium tracking-wide uppercase">
       <a href="#sobre"    class="nav-link hover:text-accent transition-colors duration-200">Sobre</a>
       <a href="#projetos" class="nav-link hover:text-accent transition-colors duration-200">Projetos</a>
-      <a href="#formacao" class="nav-link hover:text-accent transition-colors duration-200">Formação</a>
       <a href="#skills"   class="nav-link hover:text-accent transition-colors duration-200">Skills</a>
+      <a href="#formacao" class="nav-link hover:text-accent transition-colors duration-200">Formação</a>
       <a href="#contato"  class="nav-link hover:text-accent transition-colors duration-200">Contato</a>
     </div>
 
-    <!-- Theme toggle -->
-    <button id="themeToggle" aria-label="Alternar tema"
-      class="w-10 h-10 rounded-full border border-ink/20 dark:border-paper/20
-             flex items-center justify-center hover:border-accent hover:text-accent
-             transition-all duration-300 text-lg">
-      <span id="themeIcon">☀️</span>
-    </button>
+    <div class="flex items-center gap-4">
+      <button id="themeToggle" aria-label="Alternar tema"
+        class="w-10 h-10 rounded-full border border-ink/20 dark:border-paper/20
+              flex items-center justify-center hover:border-accent hover:text-accent
+              transition-all duration-300 text-lg z-50">
+        <span id="themeIcon">☀️</span>
+      </button>
+
+      <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 z-50 p-2" aria-label="Abrir menu">
+        <span class="w-6 h-0.5 bg-current transition-all duration-300 origin-left" id="line1"></span>
+        <span class="w-6 h-0.5 bg-current transition-all duration-300" id="line2"></span>
+        <span class="w-6 h-0.5 bg-current transition-all duration-300 origin-left" id="line3"></span>
+      </button>
+    </div>
+
+    <div id="mobileMenu" 
+        class="fixed inset-0 bg-paper dark:bg-ink flex flex-col items-center justify-center gap-8 
+                translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+      <a href="#sobre"    class="mobile-link text-2xl font-display font-bold hover:text-accent">Sobre</a>
+      <a href="#projetos" class="mobile-link text-2xl font-display font-bold hover:text-accent">Projetos</a>
+      <a href="#skills"   class="mobile-link text-2xl font-display font-bold hover:text-accent">Skills</a>
+      <a href="#formacao" class="mobile-link text-2xl font-display font-bold hover:text-accent">Formação</a>
+      <a href="#contato"  class="mobile-link text-2xl font-display font-bold hover:text-accent">Contato</a>
+    </div>
   </nav>
 
-  <!-- ── HERO ── -->
-  <section id="hero" class="min-h-screen flex items-center px-8 md:px-20 pt-24 pb-16 relative overflow-hidden">
+  <section id="hero" class="min-h-screen flex items-center justify-center px-8 md:px-20 pt-32 pb-16 relative overflow-hidden">
 
-    <!-- Decorative circle -->
-    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full
-                border border-accent/20 opacity-40 pointer-events-none translate-x-1/4"></div>
-    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full
-                border border-accent/30 opacity-30 pointer-events-none translate-x-1/4"></div>
-    <div class="absolute right-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full
-                bg-accent/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-accent/20 opacity-40 pointer-events-none translate-x-1/4"></div>
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full border border-accent/30 opacity-30 pointer-events-none translate-x-1/4"></div>
+    <div class="absolute right-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-accent/10 blur-3xl pointer-events-none"></div>
 
-    <div class="max-w-3xl">
+    <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12 z-10">
+    
+    <div class="max-w-3xl text-center lg:text-left">
       <p class="animate-fadein-1 font-mono text-sm text-accent tracking-widest uppercase mb-4">
         Olá, mundo! 👋
       </p>
 
-      <h1 class="animate-fadein-2 font-display text-6xl md:text-8xl font-bold leading-[1.05] mb-6">
+      <h1 class="animate-fadein-2 font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6">
         Eu sou<br/>
         <span class="italic font-normal text-accent">Estevão Augusto</span>
       </h1>
 
-      <p class="animate-fadein-3 font-body text-lg md:text-xl text-ink/60 dark:text-paper/60 max-w-xl leading-relaxed mb-10">
-        Ciêntista da Computação apaixonado pela área de dados e inteligência artificial, 
+      <p class="animate-fadein-3 font-body text-lg md:text-xl text-ink/60 dark:text-paper/60 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10">
+        Cientista da Computação apaixonado pela área de dados e inteligência artificial, 
         buscando sempre aprender e aplicar novas tecnologias para resolver problemas complexos.
       </p>
 
-      <div class="animate-fadein-4 flex flex-wrap gap-4">
+      <div class="animate-fadein-4 flex flex-wrap justify-center lg:justify-start gap-4">
         <a href="#projetos"
            class="px-7 py-3.5 bg-accent text-ink font-mono font-semibold text-sm rounded-full
                   hover:scale-105 active:scale-95 transition-transform duration-200 shadow-lg shadow-accent/20">
@@ -82,6 +96,21 @@
         </a>
       </div>
     </div>
+
+    <div class="animate-fadein-3 relative group">
+      <div class="absolute -inset-4 border border-accent/20 rounded-full scale-95 group-hover:scale-100 transition-transform duration-500"></div>
+      
+      <div class="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 border-accent shadow-2xl transition-all duration-500">
+        <img 
+          src="./../images/Foto_Minha_2.jpg" 
+          alt="Estevão Augusto" 
+          class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-zoom-in"
+        />
+      </div>
+    </div>
+
+    </div>
+  </section>
 
     <!-- Floating badge -->
     <div class="hidden lg:flex absolute right-20 bottom-20 flex-col items-center gap-1 opacity-40">
@@ -102,40 +131,23 @@
                     text-8xl shadow-2xl shadow-accent/10">
           🧑‍💻
         </div>
-        <!-- Decorative tag -->
-        <div class="absolute -bottom-5 -right-5 bg-ink dark:bg-paper text-paper dark:text-ink
-                    font-mono text-xs px-4 py-2 rounded-full shadow-xl">
-          Available for hire ✓
-        </div>
       </div>
 
       <div class="reveal">
         <span class="font-mono text-xs text-accent tracking-widest uppercase">// sobre mim</span>
         <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 mb-6 leading-tight">
-          Código com<br/><em class="italic font-normal text-accent">propósito</em>
+          Insights para<br/><em class="italic font-normal text-accent">humanos</em>
         </h2>
         <p class="text-ink/70 dark:text-paper/70 leading-relaxed mb-4">
-          Tenho 5 anos de experiência construindo produtos digitais que realmente importam.
-          Especializado em React, Node.js e arquiteturas cloud-native.
+          A partir do Ensino Médio, me interessei por tecnologia e desenvolvimento de software,
+          o que me levou a ingressar no curso de Ciência da Computação na Universidade Federal de Lavras (UFLA).
         </p>
         <p class="text-ink/70 dark:text-paper/70 leading-relaxed mb-8">
-          Acredito que bom código é aquele que humanos conseguem ler tão bem quanto máquinas.
-          Fora do terminal, você me encontra lendo sobre design de sistemas ou explorando trilhas.
+          Ao longo da minha jornada acadêmica, tive a oportunidade de explorar diversas áreas, inicialmente
+          meu foco era mais voltado para o desenvolvimento front-end e Interação Humano-Computador, onde pude criar interfaces e experiências de usuário. 
+          No entanto, recentemente, tenho transicionado meu interesse para o campo de dados e inteligência artificial, onde encontrei minha verdadeira paixão.
+          Busco trazer o lado humano para a tecnologia, utilizando dados e IA para gerar insights que possam impactar positivamente a vida das pessoas.
         </p>
-        <div class="grid grid-cols-3 gap-6 border-t border-ink/10 dark:border-paper/10 pt-8">
-          <div>
-            <p class="font-display text-4xl font-bold text-accent">5+</p>
-            <p class="text-xs text-ink/50 dark:text-paper/50 uppercase tracking-wider mt-1">Anos exp.</p>
-          </div>
-          <div>
-            <p class="font-display text-4xl font-bold text-accent">40+</p>
-            <p class="text-xs text-ink/50 dark:text-paper/50 uppercase tracking-wider mt-1">Projetos</p>
-          </div>
-          <div>
-            <p class="font-display text-4xl font-bold text-accent">12+</p>
-            <p class="text-xs text-ink/50 dark:text-paper/50 uppercase tracking-wider mt-1">Clientes</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -251,7 +263,7 @@
 
           <div>
             <div class="flex justify-between font-mono text-sm mb-2">
-              <span>React / Next.js</span><span class="text-accent">95%</span>
+              <span>Python</span><span class="text-accent">95%</span>
             </div>
             <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
               <div class="skill-fill" style="width:95%"></div>
@@ -260,7 +272,7 @@
 
           <div>
             <div class="flex justify-between font-mono text-sm mb-2">
-              <span>TypeScript</span><span class="text-accent">90%</span>
+              <span>React</span><span class="text-accent">90%</span>
             </div>
             <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
               <div class="skill-fill" style="width:90%"></div>
@@ -269,7 +281,7 @@
 
           <div>
             <div class="flex justify-between font-mono text-sm mb-2">
-              <span>Node.js / Express</span><span class="text-accent">88%</span>
+              <span>Pandas</span><span class="text-accent">88%</span>
             </div>
             <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
               <div class="skill-fill" style="width:88%"></div>
@@ -278,7 +290,7 @@
 
           <div>
             <div class="flex justify-between font-mono text-sm mb-2">
-              <span>Python / FastAPI</span><span class="text-accent">80%</span>
+              <span>SQL</span><span class="text-accent">80%</span>
             </div>
             <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
               <div class="skill-fill" style="width:80%"></div>
@@ -291,7 +303,7 @@
 
           <div>
             <div class="flex justify-between font-mono text-sm mb-2">
-              <span>PostgreSQL / Supabase</span><span class="text-accent">85%</span>
+              <span>Docker</span><span class="text-accent">85%</span>
             </div>
             <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
               <div class="skill-fill" style="width:85%"></div>
@@ -300,7 +312,7 @@
 
           <div>
             <div class="flex justify-between font-mono text-sm mb-2">
-              <span>Docker / CI-CD</span><span class="text-accent">78%</span>
+              <span>UI/UX Design (Figam)</span><span class="text-accent">78%</span>
             </div>
             <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
               <div class="skill-fill" style="width:78%"></div>
@@ -309,7 +321,7 @@
 
           <div>
             <div class="flex justify-between font-mono text-sm mb-2">
-              <span>AWS / GCP</span><span class="text-accent">75%</span>
+              <span>Scikit-learn</span><span class="text-accent">75%</span>
             </div>
             <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
               <div class="skill-fill" style="width:75%"></div>
@@ -318,7 +330,7 @@
 
           <div>
             <div class="flex justify-between font-mono text-sm mb-2">
-              <span>UI/UX Design (Figma)</span><span class="text-accent">70%</span>
+              <span>Jupyter Notebook</span><span class="text-accent">70%</span>
             </div>
             <div class="h-px bg-ink/10 dark:bg-paper/10 rounded-full overflow-hidden">
               <div class="skill-fill" style="width:70%"></div>
@@ -330,14 +342,12 @@
 
       <!-- Tech badges -->
       <div class="reveal mt-16 flex flex-wrap gap-3">
-        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Git</span>
-        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Tailwind CSS</span>
-        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">GraphQL</span>
-        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Redis</span>
-        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Prisma</span>
-        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Vitest</span>
-        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Storybook</span>
-        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Vercel</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Python</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Pandas</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Seaborn</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Scikit-learn</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">SQL</span>
+        <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Numpy</span>
         <span class="font-mono text-xs px-4 py-2 rounded-full border border-ink/15 dark:border-paper/15 hover:border-accent hover:text-accent transition-colors cursor-default">Linux</span>
       </div>
     </div>
@@ -384,25 +394,43 @@
       <div class="reveal mb-12">
         <span class="font-mono text-xs text-accent tracking-widest uppercase">// contato</span>
         <h2 class="font-display text-4xl md:text-5xl font-bold mt-3 leading-tight">
-          Vamos construir<br/><em class="italic font-normal text-accent">algo incrível</em>?
+          Interessado em <br/><em class="italic font-normal text-accent">conversar</em>?
         </h2>
         <p class="text-ink/60 dark:text-paper/60 mt-4 leading-relaxed">
-          Estou aberto a oportunidades freelance, colaborações e posições full-time.
-          Envie uma mensagem — responderei em até 24h.
+          Estou aberto a oportunidades de trabalho, colaborações em projetos ou simplesmente trocar ideias sobre tecnologia e inovação.
+          Abaixo está a minha lista de contatos e redes sociais. Sinta-se à vontade para me enviar uma mensagem!
         </p>
       </div>
 
       <!-- Social links -->
-      <div class="reveal mt-16 flex gap-6 pt-10 border-t border-ink/10 dark:border-paper/10">
-        <a href="https://github.com/EstevaoAugusto" class="font-mono text-xs hover:text-accent transition-colors duration-200 flex items-center gap-2">
-          <span>GitHub</span>
+      <div class="reveal mt-16 flex items-center gap-6 pt-10 border-t border-ink/10 dark:border-paper/10">
+        
+        <a href="https://github.com/EstevaoAugusto" 
+          aria-label="GitHub"
+          class="transition-all duration-300 hover:scale-110 hover:opacity-70">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+              alt="GitHub" 
+              class="w-6 h-6 dark:invert" />
         </a>
-        <a href="https://www.linkedin.com/in/estev%C3%A3o-augusto-fonseca-santos-a61792280/" class="font-mono text-xs hover:text-accent transition-colors duration-200 flex items-center gap-2">
-          <span>LinkedIn</span>
+
+        <a href="https://www.linkedin.com/in/estev%C3%A3o-augusto-fonseca-santos-a61792280/" 
+          aria-label="LinkedIn"
+          class="transition-all duration-300 hover:scale-110 hover:opacity-70">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
+              alt="LinkedIn" 
+              class="w-6 h-6" />
         </a>
-        <a href="mailto:estevaoaugusto2005@gmail.com" class="font-mono text-xs hover:text-accent transition-colors duration-200">
-          estevaoaugusto2005@gmail.com
+
+        <a href="mailto:estevaoaugusto2005@gmail.com" 
+          class="flex items-center gap-2 group transition-all duration-300">
+          <div class="p-1.5 rounded-full bg-ink/5 dark:bg-paper/5 group-hover:bg-accent/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-ink dark:text-paper group-hover:text-accent">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+          </div>
+          <span class="font-mono text-xs hidden sm:block group-hover:text-accent transition-colors">E-mail</span>
         </a>
+
       </div>
     </div>
   </section>
@@ -411,7 +439,7 @@
   <footer class="py-8 px-8 md:px-20 border-t border-ink/10 dark:border-paper/10">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
       <span class="font-display text-lg font-bold">
-        <span class="text-accent">&lt;</span>Dev<span class="text-accent">/&gt;</span>
+        <span class="text-accent">&lt;</span>Estevão Augusto<span class="text-accent">/&gt;</span>
       </span>
       <p class="font-mono text-xs text-ink/40 dark:text-paper/40">
         © 2026 Estevão Augusto · Feito com ❤️ &amp; Tailwind CSS
