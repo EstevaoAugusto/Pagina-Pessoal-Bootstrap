@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfólio — Estevão Augusto</title>
 
-  <!-- Bootstrap 5 -->
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
   <!-- Google Fonts -->
@@ -18,27 +18,16 @@
 <body>
 
   <!-- ── NAVBAR ── -->
-  <nav class="navbar navbar-expand-md fixed-top px-4 py-3 border-bottom" id="mainNav">
+  <nav class="navbar navbar-expand-md fixed-top px-4 py-3" id="mainNav">
     <div class="container-fluid">
 
-      <a class="navbar-brand font-display fw-bold fs-5" href="#hero" id="logoHero">
+      <a class="navbar-brand font-display fw-bold fs-5" href="#hero">
         <span class="text-accent">&lt;</span>Estevão Augusto<span class="text-accent">/&gt;</span>
       </a>
 
-      <div class="d-flex align-items-center gap-3 ms-auto">
-        <button id="themeToggle" aria-label="Alternar tema" class="btn btn-sm btn-outline-secondary rounded-circle theme-btn">
-          <span id="themeIcon">☀️</span>
-        </button>
-
-        <button class="navbar-toggler border-0 p-1" type="button" id="menuBtn" aria-label="Abrir menu">
-          <span class="hamburger-line" id="line1"></span>
-          <span class="hamburger-line" id="line2"></span>
-          <span class="hamburger-line" id="line3"></span>
-        </button>
-      </div>
-
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav gap-md-4 fw-medium text-uppercase small tracking-wide">
+      <!-- Links desktop (colapsa em mobile) -->
+      <div class="collapse navbar-collapse justify-content-center" id="navLinks">
+        <ul class="navbar-nav gap-4 text-uppercase fw-medium font-mono small">
           <li class="nav-item"><a href="#sobre"    class="nav-link nav-link-custom">Sobre</a></li>
           <li class="nav-item"><a href="#projetos" class="nav-link nav-link-custom">Projetos</a></li>
           <li class="nav-item"><a href="#skills"   class="nav-link nav-link-custom">Skills</a></li>
@@ -46,55 +35,68 @@
           <li class="nav-item"><a href="#contato"  class="nav-link nav-link-custom">Contato</a></li>
         </ul>
       </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <!-- Tema: visível só no desktop -->
+        <button id="themeToggle" aria-label="Alternar tema" class="theme-btn d-none d-md-flex">
+          <span id="themeIcon">☀️</span>
+        </button>
+        <!-- Hamburguer customizado (mobile) -->
+        <button id="menuBtn" class="hamburger d-md-none" aria-label="Abrir menu">
+          <span id="line1"></span>
+          <span id="line2"></span>
+          <span id="line3"></span>
+        </button>
+      </div>
+
     </div>
   </nav>
 
-  <!-- Mobile full-screen menu -->
-  <div id="mobileMenu" class="mobile-menu d-md-none">
-    <a href="#sobre"    class="mobile-link display-6 font-display fw-bold">Sobre</a>
-    <a href="#projetos" class="mobile-link display-6 font-display fw-bold">Projetos</a>
-    <a href="#skills"   class="mobile-link display-6 font-display fw-bold">Skills</a>
-    <a href="#formacao" class="mobile-link display-6 font-display fw-bold">Formação</a>
-    <a href="#contato"  class="mobile-link display-6 font-display fw-bold">Contato</a>
+  <!-- ── MOBILE MENU ── -->
+  <div id="mobileMenu">
+    <a href="#sobre"    class="mobile-link">Sobre</a>
+    <a href="#projetos" class="mobile-link">Projetos</a>
+    <a href="#skills"   class="mobile-link">Skills</a>
+    <a href="#formacao" class="mobile-link">Formação</a>
+    <a href="#contato"  class="mobile-link">Contato</a>
+    <hr class="mobile-divider"/>
+    <button id="themeToggleMobile" class="mobile-theme-btn">
+      <span id="themeIconMobile">☀️</span>
+      <span id="themeLabelMobile">Tema claro</span>
+    </button>
   </div>
 
   <!-- ── HERO ── -->
-  <section id="hero" class="min-vh-100 d-flex align-items-center pt-5 overflow-hidden position-relative">
-    <!-- Decorative circles -->
-    <div class="deco-circle deco-lg"></div>
-    <div class="deco-circle deco-md"></div>
-    <div class="deco-glow"></div>
+  <section id="hero" class="hero-section d-flex align-items-center position-relative overflow-hidden">
 
-    <div class="container py-5 position-relative z-1">
-      <div class="row align-items-center gy-5 flex-column-reverse flex-lg-row">
+    <div class="deco-circle deco-lg position-absolute"></div>
+    <div class="deco-circle deco-md position-absolute"></div>
+    <div class="deco-glow position-absolute"></div>
 
-        <div class="col-lg-7 text-center text-lg-start">
-          <p class="font-mono small text-accent text-uppercase ls-wider mb-3 animate-fadein-1">
-            Olá, mundo! 👋
-          </p>
-          <h1 class="font-display display-2 fw-bold lh-sm mb-4 animate-fadein-2">
+    <div class="container position-relative z-1">
+      <div class="row align-items-center justify-content-between flex-column-reverse flex-lg-row g-5">
+
+        <div class="col-12 col-lg-7 text-center text-lg-start anim-1">
+          <p class="font-mono small text-accent text-uppercase ls-wide mb-3">Olá, mundo! 👋</p>
+          <h1 class="font-display fw-bold lh-1 mb-4 hero-title anim-2">
             Eu sou<br/>
             <em class="fst-italic fw-normal text-accent">Estevão Augusto</em>
           </h1>
-          <p class="font-body fs-5 text-muted mx-auto mx-lg-0 mb-5 animate-fadein-3" style="max-width:520px">
+          <p class="font-body fs-5 text-muted lh-lg mb-5 anim-3" style="max-width:520px">
             Cientista da Computação apaixonado pela área de dados e inteligência artificial,
             buscando sempre aprender e aplicar novas tecnologias para resolver problemas complexos.
           </p>
-          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 animate-fadein-4">
-            <a href="#projetos" class="btn btn-accent rounded-pill px-4 py-2 font-mono fw-semibold small">
-              Ver Projetos →
-            </a>
-            <a href="#contato" class="btn btn-outline-secondary rounded-pill px-4 py-2 font-mono small">
-              Falar comigo
-            </a>
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 anim-4">
+            <a href="#projetos" class="btn-accent-pill">Ver Projetos →</a>
+            <a href="#contato"  class="btn-outline-pill">Falar comigo</a>
           </div>
         </div>
 
-        <div class="col-lg-5 d-flex justify-content-center animate-fadein-3">
-          <div class="avatar-wrapper">
-            <div class="avatar-ring"></div>
-            <div class="avatar-circle">
-              <img src="./../images/Foto_Minha_2.jpg" alt="Estevão Augusto" class="avatar-img"/>
+        <div class="col-12 col-lg-4 d-flex justify-content-center anim-3">
+          <div class="hero-photo-wrap">
+            <div class="hero-ring"></div>
+            <div class="hero-circle">
+              <img src="./../images/Foto_Minha_2.jpg" alt="Estevão Augusto" class="hero-img"/>
             </div>
           </div>
         </div>
@@ -102,39 +104,34 @@
       </div>
     </div>
 
-    <!-- Scroll hint -->
-    <div class="scroll-hint d-none d-lg-flex">
+    <div class="scroll-hint d-none d-lg-flex position-absolute flex-column align-items-center">
       <div class="scroll-line"></div>
-      <span class="font-mono small ls-wider">scroll</span>
+      <span class="font-mono">scroll</span>
     </div>
   </section>
 
   <!-- ── SOBRE ── -->
-  <section id="sobre" class="py-section border-top">
-    <div class="container">
-      <div class="row align-items-center gy-5" style="max-width:900px;margin:auto">
+  <section id="sobre" class="section-pad border-top border-subtle">
+    <div class="container" style="max-width:900px">
+      <div class="row align-items-center g-5">
 
-        <div class="col-md-5 reveal">
-          <div class="about-photo mx-auto d-flex align-items-center justify-content-center">
-            🧑‍💻
-          </div>
+        <div class="col-12 col-md-5 reveal">
+          <div class="sobre-box mx-auto">🧑‍💻</div>
         </div>
 
-        <div class="col-md-7 reveal">
-          <span class="font-mono small text-accent text-uppercase ls-wider">// sobre mim</span>
-          <h2 class="font-display display-5 fw-bold mt-2 mb-4 lh-sm">
+        <div class="col-12 col-md-7 reveal">
+          <span class="font-mono small text-accent text-uppercase ls-wide">// sobre mim</span>
+          <h2 class="font-display fw-bold mt-2 mb-4 section-title lh-sm">
             Insights para<br/><em class="fst-italic fw-normal text-accent">humanos</em>
           </h2>
           <p class="text-muted lh-lg mb-3">
             A partir do Ensino Médio, me interessei por tecnologia e desenvolvimento de software,
             o que me levou a ingressar no curso de Ciência da Computação na Universidade Federal de Lavras (UFLA).
           </p>
-          <p class="text-muted lh-lg mb-3">
-            Ao longo da minha jornada acadêmica, tive a oportunidade de explorar diversas áreas, inicialmente
-            meu foco era mais voltado para o desenvolvimento front-end e Interação Humano-Computador.
-            No entanto, recentemente, tenho transicionado meu interesse para o campo de dados e inteligência artificial, onde encontrei minha verdadeira paixão.
-          </p>
           <p class="text-muted lh-lg">
+            Ao longo da minha jornada acadêmica, tive a oportunidade de explorar diversas áreas, inicialmente
+            meu foco era mais voltado para o desenvolvimento front-end e Interação Humano-Computador, onde pude criar interfaces e experiências de usuário.
+            No entanto, recentemente, tenho transicionado meu interesse para o campo de dados e inteligência artificial, onde encontrei minha verdadeira paixão.
             Busco trazer o lado humano para a tecnologia, utilizando dados e IA para gerar insights que possam impactar positivamente a vida das pessoas.
           </p>
         </div>
@@ -144,77 +141,72 @@
   </section>
 
   <!-- ── PROJETOS ── -->
-  <section id="projetos" class="py-section border-top section-alt">
+  <section id="projetos" class="section-pad border-top border-subtle section-alt">
     <div class="container" style="max-width:900px">
       <div class="reveal mb-5">
-        <span class="font-mono small text-accent text-uppercase ls-wider">// projetos</span>
-        <h2 class="font-display display-5 fw-bold mt-2">Trabalhos em Destaque</h2>
+        <span class="font-mono small text-accent text-uppercase ls-wide">// projetos</span>
+        <h2 class="font-display fw-bold mt-2 section-title">Trabalhos em Destaque</h2>
       </div>
 
       <div class="row g-4">
 
-        <!-- Card 1 -->
-        <div class="col-md-6">
-          <div class="project-card reveal h-100 rounded-4 border p-4">
+        <div class="col-12 col-md-6">
+          <div class="project-card reveal h-100 p-4 rounded-4">
             <div class="fs-1 mb-3">💥</div>
-            <span class="font-mono small text-accent ls-wider">Javascript · CSS · HTML</span>
-            <h3 class="font-display fs-3 fw-bold mt-2 mb-2 card-title-hover">Breakout</h3>
+            <span class="font-mono small text-accent ls-wide">Javascript · CSS · HTML</span>
+            <h3 class="font-display fs-4 fw-bold mt-2 mb-2 card-hover-title">Breakout</h3>
             <p class="text-muted small lh-lg mb-4">
               Jogo feito em Javascript puro, inspirado no clássico Arkanoid.
               O jogador controla uma barra para rebater uma bola.
             </p>
-            <div class="d-flex gap-2">
-              <a href="https://estevaoaugusto.github.io/Jogo-Breakout/" class="btn btn-sm btn-outline-accent rounded-pill font-mono">Demo →</a>
-              <a href="https://github.com/EstevaoAugusto/Jogo-Breakout" class="btn btn-sm btn-outline-secondary rounded-pill font-mono">GitHub</a>
+            <div class="d-flex gap-2 mt-auto">
+              <a href="https://estevaoaugusto.github.io/Jogo-Breakout/" class="pill-accent font-mono small">Demo →</a>
+              <a href="https://github.com/EstevaoAugusto/Jogo-Breakout"  class="pill-ghost font-mono small">GitHub</a>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="col-md-6">
-          <div class="project-card reveal h-100 rounded-4 border p-4">
+        <div class="col-12 col-md-6">
+          <div class="project-card reveal h-100 p-4 rounded-4">
             <div class="fs-1 mb-3">📈</div>
-            <span class="font-mono small text-accent ls-wider">Python · Data · ML</span>
-            <h3 class="font-display fs-3 fw-bold mt-2 mb-2 card-title-hover">Desafio ZettaLab</h3>
+            <span class="font-mono small text-accent ls-wide">Python · Data · ML</span>
+            <h3 class="font-display fs-4 fw-bold mt-2 mb-2 card-hover-title">Desafio ZettaLab</h3>
             <p class="text-muted small lh-lg mb-4">
-              Projeto de Ciência de Dados analisando dados do governo sobre questões econômicas e sociais,
-              gerando insights e relatórios para tomada de decisão. Realizado durante o desafio ZettaLab na UFLA.
+              Projeto de Ciência de Dados: análise de dados governamentais sobre questões econômicas
+              e sociais para gerar insights e relatórios. Desafio ZettaLab na UFLA.
             </p>
-            <div class="d-flex gap-2">
-              <a href="https://desafio-zettalab-ciencia-e-governanca-de-dados.streamlit.app/" class="btn btn-sm btn-outline-accent rounded-pill font-mono">Dashboard →</a>
-              <a href="https://github.com/EstevaoAugusto/ZettaLab-2ed-Desafio-Ciencia-e-Governanca-de-Dados" class="btn btn-sm btn-outline-secondary rounded-pill font-mono">GitHub</a>
+            <div class="d-flex gap-2 mt-auto">
+              <a href="https://desafio-zettalab-ciencia-e-governanca-de-dados.streamlit.app/" class="pill-accent font-mono small">Dashboard →</a>
+              <a href="https://github.com/EstevaoAugusto/ZettaLab-2ed-Desafio-Ciencia-e-Governanca-de-Dados" class="pill-ghost font-mono small">GitHub</a>
             </div>
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="col-md-6">
-          <div class="project-card reveal h-100 rounded-4 border p-4">
+        <div class="col-12 col-md-6">
+          <div class="project-card reveal h-100 p-4 rounded-4">
             <div class="fs-1 mb-3">📊</div>
-            <span class="font-mono small text-accent ls-wider">Python · RAG · Javascript</span>
-            <h3 class="font-display fs-3 fw-bold mt-2 mb-2 card-title-hover">CoffeeNet</h3>
+            <span class="font-mono small text-accent ls-wide">Python · RAG · Javascript</span>
+            <h3 class="font-display fs-4 fw-bold mt-2 mb-2 card-hover-title">CoffeeNet</h3>
             <p class="text-muted small lh-lg mb-4">
-              Trabalho em grupo na disciplina 'Sistemas Distribuídos', construindo um sistema de RAG
-              (Retrieval-Augmented Generation) para melhorar o atendimento de clientes em Cafeterias.
+              Sistema RAG (Retrieval-Augmented Generation) desenvolvido em grupo na disciplina
+              Sistemas Distribuídos para melhorar o atendimento em cafeterias.
             </p>
-            <div class="d-flex gap-2">
-              <a href="https://github.com/EstevaoAugusto/Trabalho-GCC129" class="btn btn-sm btn-outline-secondary rounded-pill font-mono">GitHub</a>
+            <div class="d-flex gap-2 mt-auto">
+              <a href="https://github.com/EstevaoAugusto/Trabalho-GCC129" class="pill-ghost font-mono small">GitHub</a>
             </div>
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="col-md-6">
-          <div class="project-card reveal h-100 rounded-4 border p-4">
+        <div class="col-12 col-md-6">
+          <div class="project-card reveal h-100 p-4 rounded-4">
             <div class="fs-1 mb-3">💬</div>
-            <span class="font-mono small text-accent ls-wider">Compiladores</span>
-            <h3 class="font-display fs-3 fw-bold mt-2 mb-2 card-title-hover">Trabalho-Compiladores</h3>
+            <span class="font-mono small text-accent ls-wide">Compiladores</span>
+            <h3 class="font-display fs-4 fw-bold mt-2 mb-2 card-hover-title">Trabalho-Compiladores</h3>
             <p class="text-muted small lh-lg mb-4">
-              Trabalho da disciplina de Compiladores na UFLA. Objetivo de criar um analisador léxico e sintático
-              utilizando Flex e Bison, ferramentas amplamente utilizadas para construção de compiladores.
+              Analisador léxico e sintático com Flex e Bison, na disciplina de Compiladores da UFLA.
             </p>
-            <div class="d-flex gap-2">
-              <a href="https://github.com/EstevaoAugusto/Trabalho-Compiladores" class="btn btn-sm btn-outline-secondary rounded-pill font-mono">GitHub</a>
+            <div class="d-flex gap-2 mt-auto">
+              <a href="https://github.com/EstevaoAugusto/Trabalho-Compiladores" class="pill-ghost font-mono small">GitHub</a>
             </div>
           </div>
         </div>
@@ -224,177 +216,130 @@
   </section>
 
   <!-- ── SKILLS ── -->
-  <section id="skills" class="py-section border-top">
+  <section id="skills" class="section-pad border-top border-subtle">
     <div class="container" style="max-width:900px">
       <div class="reveal mb-5">
-        <span class="font-mono small text-accent text-uppercase ls-wider">// skills</span>
-        <h2 class="font-display display-5 fw-bold mt-2">Stack & Ferramentas</h2>
+        <span class="font-mono small text-accent text-uppercase ls-wide">// skills</span>
+        <h2 class="font-display fw-bold mt-2 section-title">Stack & Ferramentas</h2>
       </div>
 
       <div class="row g-5">
-
-        <!-- Left column -->
-        <div class="col-md-6 reveal">
-          <div class="d-flex flex-column gap-4">
-
-            <div>
-              <div class="d-flex justify-content-between font-mono small mb-1">
-                <span>Python</span><span class="text-accent">95%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" style="width:95%"></div></div>
-            </div>
-
-            <div>
-              <div class="d-flex justify-content-between font-mono small mb-1">
-                <span>React</span><span class="text-accent">90%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
-            </div>
-
-            <div>
-              <div class="d-flex justify-content-between font-mono small mb-1">
-                <span>Pandas</span><span class="text-accent">88%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" style="width:88%"></div></div>
-            </div>
-
-            <div>
-              <div class="d-flex justify-content-between font-mono small mb-1">
-                <span>SQL</span><span class="text-accent">80%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
-            </div>
-
+        <div class="col-12 col-md-6 reveal">
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-1"><span>Python</span><span class="text-accent">95%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-1"><span>React</span><span class="text-accent">90%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-1"><span>Pandas</span><span class="text-accent">88%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-1"><span>SQL</span><span class="text-accent">80%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
           </div>
         </div>
-
-        <!-- Right column -->
-        <div class="col-md-6 reveal">
-          <div class="d-flex flex-column gap-4">
-
-            <div>
-              <div class="d-flex justify-content-between font-mono small mb-1">
-                <span>Docker</span><span class="text-accent">85%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
-            </div>
-
-            <div>
-              <div class="d-flex justify-content-between font-mono small mb-1">
-                <span>UI/UX Design (Figma)</span><span class="text-accent">78%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" style="width:78%"></div></div>
-            </div>
-
-            <div>
-              <div class="d-flex justify-content-between font-mono small mb-1">
-                <span>Scikit-learn</span><span class="text-accent">75%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
-            </div>
-
-            <div>
-              <div class="d-flex justify-content-between font-mono small mb-1">
-                <span>Jupyter Notebook</span><span class="text-accent">70%</span>
-              </div>
-              <div class="skill-track"><div class="skill-fill" style="width:70%"></div></div>
-            </div>
-
+        <div class="col-12 col-md-6 reveal">
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-1"><span>Docker</span><span class="text-accent">85%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-1"><span>UI/UX Design (Figma)</span><span class="text-accent">78%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:78%"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-1"><span>Scikit-learn</span><span class="text-accent">75%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between font-mono small mb-1"><span>Jupyter Notebook</span><span class="text-accent">70%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width:70%"></div></div>
           </div>
         </div>
-
       </div>
 
       <!-- Tech badges -->
-      <div class="reveal mt-5 d-flex flex-wrap gap-2">
-        <span class="badge-tech">Python</span>
-        <span class="badge-tech">Pandas</span>
-        <span class="badge-tech">Seaborn</span>
-        <span class="badge-tech">Scikit-learn</span>
-        <span class="badge-tech">SQL</span>
-        <span class="badge-tech">Numpy</span>
-        <span class="badge-tech">Linux</span>
+      <div class="reveal mt-4 d-flex flex-wrap gap-2">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Pandas</span>
+        <span class="tech-badge">Seaborn</span>
+        <span class="tech-badge">Scikit-learn</span>
+        <span class="tech-badge">SQL</span>
+        <span class="tech-badge">Numpy</span>
+        <span class="tech-badge">Linux</span>
       </div>
-
     </div>
   </section>
 
   <!-- ── FORMAÇÃO ── -->
-  <section id="formacao" class="py-section border-top section-alt">
+  <section id="formacao" class="section-pad border-top border-subtle section-alt">
     <div class="container" style="max-width:900px">
       <div class="reveal mb-5">
-        <span class="font-mono small text-accent text-uppercase ls-wider">// formação</span>
-        <h2 class="font-display display-5 fw-bold mt-2">Educação & Certificações</h2>
+        <span class="font-mono small text-accent text-uppercase ls-wide">// formação</span>
+        <h2 class="font-display fw-bold mt-2 section-title">Educação & Certificações</h2>
       </div>
-
       <div class="row g-5">
-
-        <div class="col-md-6 reveal">
+        <div class="col-12 col-md-6 reveal">
           <div class="d-flex gap-3 align-items-start">
-            <div class="fs-2">🎓</div>
+            <div class="fs-2 mt-1">🎓</div>
             <div>
-              <h3 class="font-display fs-5 fw-bold">Bacharelado em Ciência da Computação</h3>
-              <p class="text-muted small">Universidade Federal de Lavras (UFLA) · 2023 - Presente</p>
+              <h3 class="font-display fs-5 fw-bold mb-1">Bacharelado em Ciência da Computação</h3>
+              <p class="small text-muted mb-0">Universidade Federal de Lavras (UFLA) · 2023 - Presente</p>
             </div>
           </div>
         </div>
-
-        <div class="col-md-6 reveal">
+        <div class="col-12 col-md-6 reveal">
           <div class="d-flex gap-3 align-items-start">
-            <div class="fs-2">🎓</div>
+            <div class="fs-2 mt-1">🎓</div>
             <div>
-              <h3 class="font-display fs-5 fw-bold">Ensino Médio Integrado ao Técnico em Informática</h3>
-              <p class="text-muted small">IFSULDEMINAS, Campus Avançado de Carmo de Minas · 2020 - 2022</p>
+              <h3 class="font-display fs-5 fw-bold mb-1">Ensino Médio Integrado ao Técnico em Informática</h3>
+              <p class="small text-muted mb-0">IFSULDEMINAS, Campus Avançado de Carmo de Minas · 2020 - 2022</p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ── CONTATO ── -->
-  <section id="contato" class="py-section border-top section-alt">
+  <section id="contato" class="section-pad border-top border-subtle section-alt">
     <div class="container" style="max-width:700px">
       <div class="reveal mb-5">
-        <span class="font-mono small text-accent text-uppercase ls-wider">// contato</span>
-        <h2 class="font-display display-5 fw-bold mt-2 lh-sm">
-          Interessado em<br/><em class="fst-italic fw-normal text-accent">conversar</em>?
+        <span class="font-mono small text-accent text-uppercase ls-wide">// contato</span>
+        <h2 class="font-display fw-bold mt-2 section-title lh-sm">
+          Interessado em <br/><em class="fst-italic fw-normal text-accent">conversar</em>?
         </h2>
         <p class="text-muted mt-3 lh-lg">
-          Estou aberto a oportunidades de trabalho, colaborações em projetos ou simplesmente trocar ideias sobre tecnologia e inovação.
-          Sinta-se à vontade para me enviar uma mensagem!
+          Estou aberto a oportunidades de trabalho, colaborações em projetos ou simplesmente trocar
+          ideias sobre tecnologia e inovação. Sinta-se à vontade para me enviar uma mensagem!
         </p>
       </div>
 
-      <!-- Social links -->
-      <div class="reveal d-flex align-items-center gap-4 pt-4 border-top mt-4">
-
+      <div class="reveal d-flex align-items-center gap-4 pt-4 border-top border-subtle">
         <a href="https://github.com/EstevaoAugusto" aria-label="GitHub" class="social-link">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-               alt="GitHub" class="social-icon github-icon"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="social-icon invert-on-dark"/>
         </a>
-
         <a href="https://www.linkedin.com/in/estev%C3%A3o-augusto-fonseca-santos-a61792280/" aria-label="LinkedIn" class="social-link">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
-               alt="LinkedIn" class="social-icon"/>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="social-icon"/>
         </a>
-
         <a href="mailto:estevaoaugusto2005@gmail.com" class="social-link d-flex align-items-center gap-2">
-          <div class="email-icon-wrap">
+          <div class="social-icon-wrap">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
             </svg>
           </div>
-          <span class="font-mono small d-none d-sm-inline">E-mail</span>
+          <span class="font-mono small d-none d-sm-inline">estevaoaugusto2005@gmail.com</span>
         </a>
-
       </div>
     </div>
   </section>
 
   <!-- ── FOOTER ── -->
-  <footer class="py-4 border-top">
+  <footer class="py-4 px-4 border-top border-subtle">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3" style="max-width:900px">
       <span class="font-display fs-5 fw-bold">
         <span class="text-accent">&lt;</span>Estevão Augusto<span class="text-accent">/&gt;</span>

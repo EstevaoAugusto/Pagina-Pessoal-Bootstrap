@@ -18,9 +18,10 @@
 
 <body class="bg-paper dark:bg-ink text-ink dark:text-paper min-h-screen">
 
-  <-- ── NAVBAR ── -->
-  <nav class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-8 py-5
-              bg-paper/80 dark:bg-ink/80 backdrop-blur-md border-b border-ink/10 dark:border-paper/10">
+  <!-- ── NAVBAR ── -->
+  <nav class="fixed top-0 inset-x-0 flex items-center justify-between px-8 py-5
+              bg-paper/80 dark:bg-ink/80 backdrop-blur-md border-b border-ink/10 dark:border-paper/10"
+       style="z-index: 9999;">
 
     <a href="#hero" class="font-display text-xl font-bold tracking-tight z-50" id="logoHero">
       <span class="text-accent">&lt;</span>Estevão Augusto<span class="text-accent">/&gt;</span>
@@ -35,30 +36,44 @@
     </div>
 
     <div class="flex items-center gap-4">
+      <!-- Botão de tema visível apenas no desktop -->
       <button id="themeToggle" aria-label="Alternar tema"
-        class="w-10 h-10 rounded-full border border-ink/20 dark:border-paper/20
-              flex items-center justify-center hover:border-accent hover:text-accent
-              transition-all duration-300 text-lg z-50">
+        class="hidden md:flex w-10 h-10 rounded-full border border-ink/20 dark:border-paper/20
+              items-center justify-center hover:border-accent hover:text-accent
+              transition-all duration-300 text-lg">
         <span id="themeIcon">☀️</span>
       </button>
 
-      <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 z-50 p-2" aria-label="Abrir menu">
+      <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
         <span class="w-6 h-0.5 bg-current transition-all duration-300 origin-left" id="line1"></span>
         <span class="w-6 h-0.5 bg-current transition-all duration-300" id="line2"></span>
         <span class="w-6 h-0.5 bg-current transition-all duration-300 origin-left" id="line3"></span>
       </button>
     </div>
 
-    <div id="mobileMenu" 
-        class="fixed inset-0 bg-paper dark:bg-ink flex flex-col items-center justify-center gap-8 
-                translate-x-full transition-transform duration-500 ease-in-out md:hidden">
-      <a href="#sobre"    class="mobile-link text-2xl font-display font-bold hover:text-accent">Sobre</a>
-      <a href="#projetos" class="mobile-link text-2xl font-display font-bold hover:text-accent">Projetos</a>
-      <a href="#skills"   class="mobile-link text-2xl font-display font-bold hover:text-accent">Skills</a>
-      <a href="#formacao" class="mobile-link text-2xl font-display font-bold hover:text-accent">Formação</a>
-      <a href="#contato"  class="mobile-link text-2xl font-display font-bold hover:text-accent">Contato</a>
-    </div>
   </nav>
+
+  <!-- Mobile Menu — fora da nav para não herdar stacking context -->
+  <div id="mobileMenu" 
+      class="fixed inset-0 bg-paper dark:bg-ink flex flex-col items-center justify-center gap-10
+              translate-x-full transition-transform duration-500 ease-in-out md:hidden"
+      style="z-index: 9998;">
+    <a href="#sobre"    class="mobile-link text-2xl font-display font-bold hover:text-accent transition-colors">Sobre</a>
+    <a href="#projetos" class="mobile-link text-2xl font-display font-bold hover:text-accent transition-colors">Projetos</a>
+    <a href="#skills"   class="mobile-link text-2xl font-display font-bold hover:text-accent transition-colors">Skills</a>
+    <a href="#formacao" class="mobile-link text-2xl font-display font-bold hover:text-accent transition-colors">Formação</a>
+    <a href="#contato"  class="mobile-link text-2xl font-display font-bold hover:text-accent transition-colors">Contato</a>
+
+    <!-- Separador -->
+    <div class="w-12 h-px bg-ink/20 dark:bg-paper/20"></div>
+
+    <!-- Botão de tema no menu mobile -->
+    <button id="themeToggleMobile" aria-label="Alternar tema"
+      class="flex items-center gap-3 font-display text-xl font-bold hover:text-accent transition-colors duration-200">
+      <span id="themeIconMobile">☀️</span>
+      <span id="themeLabelMobile">Tema claro</span>
+    </button>
+  </div>
 
   <section id="hero" class="min-h-screen flex items-center justify-center px-8 md:px-20 pt-32 pb-16 relative overflow-hidden">
 
@@ -117,7 +132,6 @@
       <div class="w-px h-16 bg-current"></div>
       <span class="font-mono text-xs tracking-widest rotate-90 origin-center translate-y-8">scroll</span>
     </div>
-  </section>
 
   <!-- ── SOBRE ── -->
   <section id="sobre" class="py-28 px-8 md:px-20 border-t border-ink/10 dark:border-paper/10">
@@ -428,7 +442,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
           </div>
-          <span class="font-mono text-xs hidden sm:block group-hover:text-accent transition-colors">E-mail</span>
+          <span class="font-mono text-xs hidden sm:block group-hover:text-accent transition-colors">estevaoaugusto2005@gmail.com</span>
         </a>
 
       </div>

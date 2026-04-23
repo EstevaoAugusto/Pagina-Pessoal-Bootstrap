@@ -1,19 +1,31 @@
 // ── Theme toggle ──
-const html   = document.documentElement;
-const toggleBtn  = document.getElementById('themeToggle');
+const html      = document.documentElement;
+const toggleBtn       = document.getElementById('themeToggle');
+const toggleBtnMobile = document.getElementById('themeToggleMobile');
 const themeIcon  = document.getElementById('themeIcon');
+const themeLabel = document.getElementById('themeLabelMobile');
+const themeIconMobile = document.getElementById('themeIconMobile');
 
-// Respect saved preference
-if (localStorage.getItem('theme') === 'light') {
-  html.classList.remove('dark');
-  themeIcon.textContent = '🌙';
+function updateThemeUI(isDark) {
+  themeIcon.textContent  = isDark ? '☀️' : '🌙';
+  themeIconMobile.textContent = isDark ? '☀️' : '🌙';
+  if (themeLabel) themeLabel.textContent = isDark ? 'Tema claro' : 'Tema escuro';
 }
 
-toggleBtn.addEventListener('click', () => {
+function applyThemeToggle() {
   const isDark = html.classList.toggle('dark');
-  themeIcon.textContent = isDark ? '☀️' : '🌙';
+  updateThemeUI(isDark);
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});
+}
+
+// Respeita preferência salva
+if (localStorage.getItem('theme') === 'light') {
+  html.classList.remove('dark');
+}
+updateThemeUI(html.classList.contains('dark'));
+
+toggleBtn.addEventListener('click', applyThemeToggle);
+toggleBtnMobile.addEventListener('click', applyThemeToggle);
 
 // ── Scroll reveal ──
 const observer = new IntersectionObserver((entries) => {
@@ -46,10 +58,7 @@ const navBar = document.querySelector('nav');
 const logoHero = document.getElementById('logoHero');
 
 function toggleMenu() {
-    // Abre/Fecha o menu
     mobileMenu.classList.toggle('translate-x-full');
-   
-
 
     // Animação do ícone Hambúrguer vira "X"
     line1.classList.toggle('rotate-[42deg]');
@@ -58,10 +67,6 @@ function toggleMenu() {
     
     // Bloqueia o scroll do corpo quando o menu está aberto
     document.body.classList.toggle('overflow-hidden');
-
-    allSections.forEach(section => {
-        section.classList.toggle('blur-sm');
-    });
   }
 
 menuBtn.addEventListener('click', toggleMenu);
